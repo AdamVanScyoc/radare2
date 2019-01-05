@@ -38,6 +38,9 @@ static void print_string(RBinFile *bf, RBinString *string) {
 	case R_MODE_SIMPLE:
 		io->cb_printf ("0x%08" PFMT64x " %s\n", addr, string->string);
 		break;
+	case R_MODE_SIMPLEST:
+		r_cons_printf ("%s\n", string->string);
+		break;
 	case R_MODE_RADARE: {
 		char *f_name, *nstr;
 		f_name = strdup (string->string);
